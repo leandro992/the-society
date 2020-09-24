@@ -1,1 +1,1 @@
-# thr-society
+# the-society
