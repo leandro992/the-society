@@ -47,15 +47,15 @@
 </nav>
 
 <div class="container" style="margin-top:30px">
-    <form >
+    <form action="/pedido/novo" method="POST">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="inputEmail4">Nome</label>
-                <input type="text" class="form-control" id="inputEmail4" placeholder="Nome">
+                <label for="nome">Nome</label>
+                <input name="nome" type="text" class="form-control" id="inputEmail4" placeholder="Nome">
             </div>
             <div class="form-group col-md-6">
-                <label for="inputPassword4">CPF</label>
-                <input type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00');" id="inputPassword4" placeholder="CPF">
+                <label for="cpf">CPF</label>
+                <input name="cpf" type="text" class="form-control" onkeypress="$(this).mask('000.000.000-00');" id="inputPassword4" placeholder="CPF">
             </div>
         </div>
 
@@ -64,13 +64,13 @@
                 <legend class="col-form-label col-sm- pt-0">Sexo</legend>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                        <input name="sexo" class="form-check-input" type="radio" id="gridRadios1" value="F" checked>
                         <label class="form-check-label" for="gridRadios1">
                             Feminino
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <input name="sexo" class="form-check-input" type="radio"  id="gridRadios2" value="M">
                         <label class="form-check-label" for="gridRadios2">
                             Masculino
                         </label>
@@ -80,21 +80,21 @@
         </fieldset>
 
         <div class="form-group">
-            <label for="inputAddress">Data de Nascimento</label>
-            <input type="text" class="form-control" onkeypress="$(this).mask('00/00/0000')">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input name="dataNascimento" type="text" class="form-control" onkeypress="$(this).mask('00/00/0000')">
         </div>
         <div class="form-row">
             <div class="col-7">
-                <label >Endereço</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                <label for="endereco" >Endereço</label>
+                <input name="endereco" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
             </div>
             <div class="col">
-                <label for="inputZip">CEP</label>
-                <input type="text" class="form-control" onkeypress="$(this).mask('00.000-000')" id="inputZip">
+                <label for="cep">CEP</label>
+                <input name="cep"  type="text" class="form-control" onkeypress="$(this).mask('00.000-000')" id="inputZip">
             </div>
             <div class="col">
-                <label for="inputAddress">Telefone</label>
-                <input type="text" class="form-control" id="inputPhone" onkeypress="$(this).mask('(00) 0000-00009')"
+                <label for="telefone">Telefone</label>
+                <input name="telefone"  type="text" class="form-control" id="inputPhone" onkeypress="$(this).mask('(00) 0000-00009')"
                        placeholder="Tefefone">
             </div>
         </div>
