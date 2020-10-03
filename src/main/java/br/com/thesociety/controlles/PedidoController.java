@@ -6,31 +6,42 @@ import br.com.thesociety.model.dto.ClienteDTO;
 import br.com.thesociety.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("pedido")
 public class PedidoController {
 
-
     @Autowired
     private ClienteRepository clienteRepository;
 
     @GetMapping("/formulario")
-    public String formulario(){
+    public String formulario() {
         System.out.println("Formulario");
         return "pedido/formulario";
     }
 
     @PostMapping("novo")
-    public String novo(ClienteDTO request){
-
+    public String novo(@Valid ClienteDTO request, BindingResult result) {
+        if (result.hasErrors()) {
+            return "pedido/formulario";
+        }
         Cliente cliente = request.toCadastroCliente();
 
-            clienteRepository.save(cliente);
+        clienteRepository.save(cliente);
         return "pedido/formulario";
+    }
+
+
+    @PostMapping("cronograma")
+    public String cronograma( BindingResult result) {
+    
+        return "pedido/agendaProfessor";
     }
 
 

@@ -20,10 +20,13 @@ public class ClienteDTO {
     @NotBlank
     private String nome;
 
+    @NotBlank
     private String cpf;
 
+    @NotBlank
     private String dataNascimento;
 
+    @NotBlank
     private String sexo;
 
     private String telefone;
