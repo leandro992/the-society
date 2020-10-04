@@ -38,11 +38,12 @@ public class PedidoController {
     }
 
 
-    @PostMapping("cronograma")
-    public String cronograma( BindingResult result) {
-    
+    @GetMapping("/agendaProfessor")
+    public String cronograma() {
+        System.out.println("Agenda");
         return "pedido/agendaProfessor";
     }
+
 
 
 }
