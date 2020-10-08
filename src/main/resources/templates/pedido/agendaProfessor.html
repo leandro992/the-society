@@ -10,6 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <style>
+        #Nav{
+          background-color: blueviolet;
+        }
+        </style>
+
 </head>
 <body>
 
@@ -33,37 +39,21 @@
 <div class="container" style="margin:30px 10px 30px 10px">
 
     <label for="inputEstado">Selecione o professor</label>
-    <select class="custom-select custom-select-sm">
-        <option selected>Abra este menu select</option>
-        <option value="1">Um</option>
-        <option value="2">Dois</option>
-        <option value="3">Três</option>
+    <select class="form-control form-control-lg">
+        <option>Large select</option>
     </select>
-
-    <label for="inputEstado">Selecione o dia da semana</label>
-    <select class="custom-select custom-select-sm">
-        <option selected>Abra este menu select</option>
-        <option value="1">Um</option>
-        <option value="2">Dois</option>
-        <option value="3">Três</option>
-    </select>
-
+    </br>
     <label for="inputEstado">Selecione o horário</label>
-    <select class="custom-select custom-select-sm mb-sm">
-        <option selected>Abra este menu select</option>
-        <option value="1">Um</option>
-        <option value="2">Dois</option>
-        <option value="3">Três</option>
+    <select class="form-control form-control-lg">
+        <option>Large select</option>
     </select>
-
-    <div class="form-group col-md-6">
-        <label for="nome">Nome</label>
-        <input name="nome" type="date" onkeypress="$(this).mask('00/00/0000')" class="form-control" id="inputEmail4" placeholder="Nome" required>
-    </div>
+    </br>
+    <label for="inputEstado">Selecione o dia da semana</label>
+    <input name="nome" type="date" onkeypress="$(this).mask('00/00/0000')" class="form-control" id="inputEmail4" placeholder="Nome" required>
 
 </div>
 
-<button type="submit" class="btn btn-primary">Enviar</button>
+<button type="submit" style="margin:0px 0px 10px 50px" class="btn btn-primary btn-lg active">Enviar</button>
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     <p>Footer</p>

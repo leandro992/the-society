@@ -38,7 +38,10 @@
                 <a class="nav-link" href="/home">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/pedido/agendaProfessor">Cronograma do professor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pedido/formulario">Cadastro de Cliente</a>
             </li>
         </ul>
     </div>
@@ -49,7 +52,7 @@
         <form class="card-body" action="/pedido/novo" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="nome">Nome do professor</label>
+                    <label for="nome">Nome</label>
                     <input name="nome" type="text" class="form-control" id="inputEmail4" placeholder="Nome" required>
                 </div>
                 <div class="form-group col-md-6">
@@ -89,17 +92,28 @@
                     <input name="endereco" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
 
                 </div>
-                <div class="col">
-                    <label for="cep">CEP</label>
-                    <input name="cep"  type="text" class="form-control" onkeypress="$(this).mask('00.000-000')" id="inputZip" required>
+
+                <div  class="form-group">
+                    <label for="inputEstado">Periodo de atuação</label>
+                    <select class="custom-select">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+
+                    <label for="telefone">Tipo de aula</label>
+                    <select class="custom-select">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
                 </div>
-                <div class="col ">
-                    <label for="telefone">Telefone</label>
-                    <input name="telefone"  type="text" class="form-control" id="inputPhone" onkeypress="$(this).mask('(00) 0000-00009')"
-                           placeholder="Tefefone" required>
-                </div>
+
+
             </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </div>

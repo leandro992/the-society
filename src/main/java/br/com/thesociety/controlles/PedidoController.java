@@ -28,11 +28,8 @@ public class PedidoController {
 
     @PostMapping("novo")
     public String novo(@Valid ClienteDTO request, BindingResult result) {
-        if (result.hasErrors()) {
-            return "pedido/formulario";
-        }
+        if (result.hasErrors()) { return "pedido/formulario"; }
         Cliente cliente = request.toCadastroCliente();
-
         clienteRepository.save(cliente);
         return "pedido/formulario";
     }
@@ -43,6 +40,13 @@ public class PedidoController {
         System.out.println("Agenda");
         return "pedido/agendaProfessor";
     }
+
+    @GetMapping("/formularioProfessor")
+    public String formularioProfessor() {
+        System.out.println("formularioProfessor");
+        return "pedido/formularioProfessor";
+    }
+
 
 
 
