@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bootstrap 4 Website Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(219, 226, 226);
+        }
+        .row{
+            background: white;
+            border-radius: 30px;
+            box-shadow: 12px 12px 22px grey;
+        }
+        img{
+            border-top-left-radius: 30px;
+            border-bottom-left-radius: 30px;
+        }
+        .btn1{
+            border: none;
+            outline: none;
+            height: 50px;
+            width: 100px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .btn1:hover{
+            background: white;
+            border: 1px solid;
+            color:  blueviolet;
+        }
+    </style>
+</head>
+<body>
+
+<section class="Form my-4 mx-5">
+    <div class="container">
+        <div th:if="${param.error}">
+            <div class="alert alert-danger">Usuário e/ou inválidos!</div>
+        </div>
+
+        <div th:if="${param.logout}">
+            <div class="alert alert-info">Até logo!</div>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-lg-5">
+                <img src="images/login.jpg" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-7 px-5 pt-5">
+                <h1>The Society</h1>
+                <h4>Faça login em sua conta</h4>
+                <form action="/entrar"  method="POST">
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input placeholder="email" class="form-control my-3 p-4" name="username" />
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <input type="password" placeholder="*****"  class="form-control my-3 p-4" name="password"  />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-lg-7">
+                            <button type="submit" class="btn1 mt-3 mb-4" name="" id="">Login</button>
+                        </div>
+                    </div>
+                    <a href="#">Esqueci minha senha</a>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

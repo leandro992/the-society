@@ -24,21 +24,21 @@
 
 <div id="Nav" class="jumbotron text-center" style="margin-bottom:0">
     <h1>The Society</h1>
-    <h3>Cadastro de cliente</h3>
+    <h3>Cadastro de Aluno</h3>
 </div>
 
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/home">Home</a>
+                <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="/pedido/formularioProfessor">Formulario Professor</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/agenda/agendaProfessor">Cronograma do professor</a>
             </li>
         </ul>
     </div>
@@ -49,7 +49,7 @@
         <form class="card-body" action="/pedido/novo" method="POST">
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="nome">Nome do professor</label>
+                    <label for="nome">Nome do Aluno</label>
                     <input name="nome" type="text" class="form-control" id="inputEmail4" placeholder="Nome" required>
                 </div>
                 <div class="form-group col-md-6">
@@ -81,7 +81,7 @@
 
             <div class="form-group">
                 <label for="dataNascimento">Data de Nascimento</label>
-                <input name="dataNascimento" type="date" class="form-control" onkeypress="$(this).mask('00/00/0000')" required>
+                <input name="dataNascimento" type="text" class="form-control" onkeypress="$(this).mask('00/00/0000')" required>
             </div>
             <div class="form-row">
                 <div class="col-7">
@@ -93,11 +93,13 @@
                     <label for="cep">CEP</label>
                     <input name="cep"  type="text" class="form-control" onkeypress="$(this).mask('00.000-000')" id="inputZip" required>
                 </div>
+
                 <div class="col ">
                     <label for="telefone">Telefone</label>
                     <input name="telefone"  type="text" class="form-control" id="inputPhone" onkeypress="$(this).mask('(00) 0000-00009')"
                            placeholder="Tefefone" required>
                 </div>
+
             </div>
                 <button type="submit" class="btn btn-primary">Enviar</button>
         </form>

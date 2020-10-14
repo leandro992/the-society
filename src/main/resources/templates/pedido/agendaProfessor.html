@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,11 +23,15 @@
     <h3>Cronograma do professor</h3>
 </div>
 
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="/home">Home</a>
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/pedido/formularioProfessor">Formulario Professor</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/pedido/formulario">Cadastro de Cliente</a>
@@ -38,19 +42,22 @@
 
 <div class="container" style="margin:30px 10px 30px 10px">
 
+    <form th:action="@{/professor}" method="POST" >
     <label for="inputEstado">Selecione o professor</label>
-    <select class="form-control form-control-lg">
-        <option>Large select</option>
+    <select name="professor" class="form-control form-control-lg">
+        <option th:each="i : ${professors}" th:value="${i}" th:text="${i.nome}"  th:selected="${i==75}" />
     </select>
+
     </br>
     <label for="inputEstado">Selecione o horário</label>
     <select class="form-control form-control-lg">
         <option>Large select</option>
     </select>
+
     </br>
     <label for="inputEstado">Selecione o dia da semana</label>
     <input name="nome" type="date" onkeypress="$(this).mask('00/00/0000')" class="form-control" id="inputEmail4" placeholder="Nome" required>
-
+    </form>
 </div>
 
 <button type="submit" style="margin:0px 0px 10px 50px" class="btn btn-primary btn-lg active">Enviar</button>
